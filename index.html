@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>CSS Explained</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Syntax">Syntax</a></li>
+            <li><a class="nav-link" href="#Selectors">Selectors</a></li>
+            <li><a class="nav-link" href="#How_To">How To</a></li>
+            <li><a class="nav-link" href="#Comments">Comments</a></li>
+            <li><a class="nav-link" href="#Colors">Colors</a></li>
+            <li><a class="nav-link" href="#Backgrounds">Backgrounds</a></li>
+            <li><a class="nav-link" href="#Borders">Borders</a></li>
+            <li><a class="nav-link" href="#Margins">Margins</a></li>
+            <li><a class="nav-link" href="#Padding">Padding</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <h2>Introduction</h2>
+            <p>CSS is a language that describes the style of an HTML document.</p>
+            <p>CSS describes how HTML elements should be displayed.</p>
+            <p>This tutorial will teach you CSS from basic to advanced.</p>
+            <hr>
+            <h3>What is CSS?</h3>
+            <ul>
+                <li><strong>CSS</strong> stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets</li>
+                <li>CSS describes <strong>how HTML elements are to be displayed on screen, paper, or in other media</strong></li>
+                <li>CSS <strong>saves a lot of work</strong>. It can control the layout of multiple web pages all at once</li>
+                <li>External stylesheets are stored in <strong>CSS files</strong></li>
+            </ul>
+            <h3>Why Use CSS?</h3>
+            <p>CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.</p>
+            <div class="example">
+                <h3>CSS Example</h3>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">body</span> {<br>
+                            <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">lightblue</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="selector">h1</span> {<br>
+                            <span class="property">&nbsp;&nbsp;color</span>: <span class="value">white</span>;<br>
+                            <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span><br>
+                            }<br>
+                            <br>
+                            <span class="selector">p</span> {<br>
+                            <span class="property">&nbsp;&nbsp;font-family</span>: <span class="value">verdana</span>;<br>
+                            <span class="property">&nbsp;&nbsp;font-size:</span> <span class="value">20px</span>;<br>
+                            }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>CSS Solved a Big Problem</h3>
+            <p>HTML was NEVER intended to contain tags for formatting a web page!</p>
+            <p>HTML was created to <strong>describe the content</strong> of a web page, like:</p>
+            <code>
+                &lt;h1&gt;This is a heading&lt;/h1&gt;<br>
+                <br>                
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+            </code>
+            <p>When tags like &lt;font&gt;, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive process.</p>
+            <p>To solve this problem, the World Wide Web Consortium (W3C) created CSS.</p>
+            <p>CSS removed the style formatting from the HTML page!</p>
+            <hr>
+            <h3>CSS Saves a Lot of Work!</h3>
+            <p>The style definitions are normally saved in external .css files.</p>
+            <p>With an external stylesheet file, you can change the look of an entire website by changing just one file!</p>
+        </section>
+        <section class="main-section" id="Syntax">
+            <h2>Syntax</h2>
+            <p>A CSS rule-set consists of a selector and a declaration block:</p>
+            <img src="https://www.w3schools.com/css/selector.gif" alt="syntax_breakdown">
+            <p>The selector points to the HTML element you want to style.</p>
+            <p>The declaration block contains one or more declarations separated by semicolons.</p>
+            <p>Each declaration includes a CSS property name and a value, separated by a colon.</p>         
+            <p>Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example all &lt;p&gt; elements will be center-aligned, with a red text color:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">verdana</span>;<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">20px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>Example Explained</h3>
+            <ul>
+                <li><span class="burgandy">p</span> is a selector in CSS (it points to the HTML element you want to style: &lt;p&gt;).</li>
+                <li><span class="burgandy">color</span> is a property, and <span class="burgandy">red</span> is the property value</li>
+                <li><span class="burgandy">text-align</span> is a property, and <span class="burgandy">center</span> is the property value</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Selectors">
+            <h2>Selectors</h2>
+            <p>CSS selectors are used to "find" (or select) the HTML elements you want to style.</p>
+            <p>We can divide CSS selectors into five categories:</p>
+            <ul>
+                <li>Simple selectors (select elements based on name, id, class)</li>
+                <li>Combinator selectors (select elements based on a specific relationship between them)</li>
+                <li>Pseudo-class selectors (select elements based on a certain state)</li>
+                <li>Pseudo-elements selectors (select and style a part of an element)</li>
+                <li>Attribute selectors (select elements based on an attribute or attribute value)</li>
+            </ul>
+            <p>This page will explain the most basic CSS selectors.</p>
+            <hr>
+            <h3>The CSS element Selector</h3>
+            <p>The element selector selects HTML elements based on the element name.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example all &lt;p&gt; elements will be center-aligned, with a red text color:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>The CSS id Selector</h3>
+            <p>The id selector uses the id attribute of an HTML element to select a specific element.</p>
+            <p>The id of an element is unique within a page, so the id selector is used to select one unique element!</p>
+            <p>To select an element with a specific id, write a hash (#) character, followed by the id of the element.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>The CSS rule below will be applied to the HTML element with id="para1"</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">#para1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>The CSS class Selector</h3>
+            <p>The class selector selects HTML elements with a specific class attribute.</p>
+            <p>To select elements with a specific class, write a period (.) character, followed by the class name.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example all HTML elements with class="center" will be red and center-aligned:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">.center</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>You can also specify that only specific HTML elements should be affected by a class.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example only &lt;p&gt; elements with class="center" will be center-aligned: </p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p.center</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>HTML elements can also refer to more than one class.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example the &lt;p&gt; element will be styled according to class="center" and to class="large":</p>
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">p</span> <span class="property">class</span><span class="value">="center large"&gt;</span>This paragraph refers to two classes.<span class="value">&lt;</span><span class="selector">/p</span><span class="value">&gt;</span>
+                    </code>
+                </div>
+            </div>
+            <h3>The CSS Universal Selector</h3>
+            <p>The universal selector (*) selects all HTML elements on the page.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>The CSS rule below will affect every HTML element on the page:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">*</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">blue</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>The CSS Grouping Selector</h3>
+            <p>The grouping selector selects all the HTML elements with the same style definitions.</p>
+            <p>Look at the following CSS code (the h1, h2, and p elements have the same style definitions):</p>
+            <div class="example">
+                <h3>Example</h3>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br><br>
+                        <span class="selector">h2</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br><br>
+                        <span class="selector">p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>It will be better to group the selectors, to minimize the code.</p>
+            <p>To group selectors, separate each selector with a comma.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example we have grouped the selectors from the code above:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">h1, h2, p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;text-align</span>: <span class="value">center</span>;<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>All CSS Simple Selectors</h3>
+            <table>
+                <tr>
+                    <th>Selector</th>
+                    <th>Example</th>
+                    <th>Example description</th>
+                </tr>
+                <tr>
+                    <td>.class</td>
+                    <td>.intro</td>
+                    <td>Selects all elements with class="intro"</td>
+                </tr>
+                <tr>
+                    <td>#id</td>
+                    <td>#firstName</td>
+                    <td>Selects the element with id="firstName"</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>Selects all elements</td>
+                </tr>
+                <tr>
+                    <td>element</td>
+                    <td>p</td>
+                    <td>Selects all &lt;p&gt; elements</td>
+                </tr>
+                <tr>
+                    <td>element,element,..</td>
+                    <td>div, p</td>
+                    <td>Selects all &lt;div&gt; elements and all &lt;p&gt; elements</td>
+                </tr>
+            </table>
+        </section>
+        <section class="main-section" id="How_To">
+            <h2>How To Add CSS</h2>
+            <p>When a browser reads a style sheet, it will format the HTML document according to the information in the style sheet.</p>
+            <hr>
+            <h3>Three Ways to Insert CSS</h3>
+            <p>There are three ways of inserting a style sheet:</p>
+            <ul>
+                <li>External CSS</li>
+                <li>Internal CSS</li>
+                <li>Inline CSS</li>
+            </ul>
+            <h3>External CSS</h3>
+            <p>With an external style sheet, you can change the look of an entire website by changing just one file!</p>                <p>Each HTML page must include a reference to the external style sheet file inside the &lt;link&gt; element, inside the head section.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>External styles are defined within the &lt;link&gt; element, inside the &lt;head&gt; section of an HTML page:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">!DOCTYPE</span> <span class="property">html</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">html</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">head</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">link</span> <span class="property">rel</span><span class="value">="stylesheet"</span> <span class="property">type</span><span class="value">="text/css"</span> <span class="property">href</span><span class="value">="mystyle.css"&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">/head</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">body</span><span class="value">&gt;</span><br>
+                        <br>
+                        <span class="value">&lt;</span><span class="selector">h1</span><span class="value">&gt;</span>This is a heading<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">p</span><span class="value">&gt;</span>This is a paragraph.<span class="value">&lt;</span><span class="selector">/p</span><span class="value">&gt;</span><br>
+                        <br>
+                        <span class="value">&lt;</span><span class="selector">/body</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">/html</span><span class="value">&gt;</span><br>
+                    </code>
+                </div>
+            </div>
+            <p>An external style sheet can be written in any text editor, and must be saved with a .css extension.</p>
+            <p>The external .css file should not contain any HTML tags.</p>
+            <p>Here is how the "mystyle.css" file looks like:</p>
+            <div class="example">
+                <h3>"mystyle.css"</h3>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">body</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">lightblue</span>;<br>
+                        }<br>
+                        <br>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">navy</span>;<br>
+                        <span class="property">&nbsp;&nbsp;margin-left</span>: <span class="value">20px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>Internal CSS</h3>
+            <p>An internal style sheet may be used if one single HTML page has a unique style.</p>
+            <p>The internal style is defined inside the &lt;style&gt; element, inside the head section.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Internal styles are defined within the &lt;style&gt; element, inside the &lt;head&gt; section of an HTML page:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">!DOCTYPE</span> <span class="property">html</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">html</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">head</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">style</span><span class="value">&gt;</span><br>
+                        <span class="selector">body</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">linen</span>;<br>
+                        }<br>
+                        <br>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">maroon</span>;<br>
+                        <span class="property">&nbsp;&nbsp;margin-left</span>: <span class="value">40px</span>;<br>
+                        }<br>
+                        <span class="value">&lt;</span><span class="selector">/style</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">/head</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">body</span><span class="value">&gt;</span><br>
+                        <br>
+                        <span class="value">&lt;</span><span class="selector">h1</span><span class="value">&gt;</span>This is a heading<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">p</span><span class="value">&gt;</span>This is a paragraph.<span class="value">&lt;</span><span class="selector">/p</span><span class="value">&gt;</span><br>
+                        <br>
+                        <span class="value">&lt;</span><span class="selector">/body</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">/html</span><span class="value">&gt;</span><br>
+                    </code>
+                </div>
+            </div>
+            <h3>Inline CSS</h3>
+            <p>An inline style may be used to apply a unique style for a single element.</p>
+            <p>To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Internal styles are defined within the &lt;style&gt; element, inside the &lt;head&gt; section of an HTML page:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">!DOCTYPE</span> <span class="property">html</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">html</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">body</span><span class="value">&gt;</span><br>
+                        <br>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="color:blue;text-align:center;"&gt;</span>This is a heading<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">p</span> <span class="property">style</span><span class="value">="color:red;"&gt;</span>This is a paragraph.<span class="value">&lt;</span><span class="selector">/p</span><span class="value">&gt;</span><br>
+                        <br>
+                        <span class="value">&lt;</span><span class="selector">/body</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">/html</span><span class="value">&gt;</span><br>
+                    </code>
+                </div>
+            </div>
+            <h3>Multiple Style Sheets</h3>
+            <p>If some properties have been defined for the same selector (element) in different style sheets, the value from the last read style sheet will be used.</p>
+            <div class="example">
+                <p>Assume that an <strong>external style sheet</strong> has the following style for the &lt;h1&gt; element:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">navy</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <div class="example">
+                <p>Then, assume that an <strong>internal style sheet</strong> also has the following style for the &lt;h1&gt; element:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">orange</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <div class="example">
+                <h3>Example</h3>                
+                <p>If the internal style is defined <strong>after</strong> the link to the external style sheet, the &lt;h1&gt; elements will be "orange":</p>
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">head</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">link</span> <span class="property">rel</span><span class="value">="stylesheet"</span> <span class="property">type</span><span class="value">="text/css"</span> <span class="property">href</span><span class="value">="mystyle.css"&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">style</span><span class="value">&gt;</span><br>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">orange</span>;<br>
+                        }<br>
+                        <span class="value">&lt;</span><span class="selector">/style</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">/head</span><span class="value">&gt;</span><br>
+                    </code>
+                </div>
+            </div>
+            <div class="example">
+                <h3>Example</h3>                
+                <p>However, if the internal style is defined <strong>before</strong> the link to the external style sheet, the &lt;h1&gt; elements will be "navy":</p>
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">head</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">style</span><span class="value">&gt;</span><br>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">orange</span>;<br>
+                        }<br>
+                        <span class="value">&lt;</span><span class="selector">/style</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">link</span> <span class="property">rel</span><span class="value">="stylesheet"</span> <span class="property">type</span><span class="value">="text/css"</span> <span class="property">href</span><span class="value">="mystyle.css"&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">/head</span><span class="value">&gt;</span><br>
+                    </code>
+                </div>
+            </div>
+            <h3>Cascading Order</h3>
+            <p>What style will be used when there is more than one style specified for an HTML element?</p>
+            <p>All the styles in a page will "cascade" into a new "virtual" style sheet by the following rules, where number one has the highest priority:</p>
+            <ol>
+                <li>Inline style (inside an HTML element)</li>
+                <li>External and internal style sheets (in the head section)</li>
+                <li>Browser default</li>
+            </ol>
+            <p>So, an inline style has the highest priority, and will override external and internal styles and browser defaults.</p>
+        </section>
+        <section class="main-section" id="Comments">
+            <h2>Comments</h2>
+            <p>Comments are used to explain the code and may help when you edit the source code at a later date.</p>
+            <p>Comments are ignored by browsers.</p>         
+            <p>A CSS comment starts with <span class="selector">/*</span> and ends with <span class="selector">*/</span>:</p>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="comment">/* This is a single-line comment */</span><br>
+                        <span class="selector">p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>You can add comments wherever you want in the code:</p>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;
+                        <span class="comment">/* Set text color to red */</span><br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>Comments can also span multiple lines:</p>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="comment">/* This is<br>a multi-line<br>comment */</span><br>
+                        <br>
+                        <span class="selector">p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;color</span>: <span class="value">red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="Colors">
+            <h2>Colors</h2>
+            <p>Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</p>
+            <hr>
+            <h3>CSS Color Names</h3>
+            <p>In CSS, a color can be specified by using a color name:</p>
+            <div id="colorNameTable">
+                <table>
+                    <tr>
+                        <td style="background-color:tomato;">Tomato</td>
+                        <td style="background-color:orange;">Orange</td>
+                        <td style="background-color:dodgerblue;">DodgerBlue</td>
+                        <td style="background-color:mediumseagreen;">MediumSeaGreen</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:gray;">Gray</td>
+                        <td style="background-color:slateblue;">SlateBlue</td>
+                        <td style="background-color:violet;">Violet</td>
+                        <td style="background-color:lightgray;" id="lightGray">LightGray</td>
+                    </tr>
+                </table>
+            </div>
+            <p>CSS/HTML support <a href="https://www.w3schools.com/colors/colors_names.asp">140 standard color names.</a></p>
+            <hr>
+            <h3>CSS Background Color</h3>
+            <p>You can set the background color for HTML elements:</p>
+            <h1 id="helloWorld">Hello World</h1>
+            <p id="loremParagraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="background-color:DodgerBlue;"&gt;</span>Hello World<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">p</span> <span class="property">style</span><span class="value">="background-color:Tomato;"&gt;</span>Lorem ipsum...<span class="value">&lt;</span><span class="selector">/p</span><span class="value">&gt;</span>
+                    </code>
+                </div>
+            </div>
+            <h3>CSS Text Color</h3>
+            <p>You can set the color of text:</p>
+            <h1 style="color:Tomato;">Hello World</h1>
+            <p style="color:DodgerBlue;">Lorem ipsum...</p>
+            <p style="color:MediumSeaGreen;">Ut wisi enim...</p>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="background-color:Tomato;"&gt;</span>Hello World<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">p</span> <span class="property">style</span><span class="value">="background-color:DodgerBlue;"&gt;</span>Lorem ipsum...<span class="value">&lt;</span><span class="selector">/p</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">p</span> <span class="property">style</span><span class="value">="background-color:MediumSeaGreen;"&gt;</span>Ut wisi enim...<span class="value">&lt;</span><span class="selector">/p</span><span class="value">&gt;</span>
+                    </code>
+                </div>
+            </div>
+            <h3>CSS Border Color</h3>
+            <p>You can set the color of borders:</p>
+            <h1 style="border:2px solid Tomato;">Hello World</h1>
+            <h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+            <h1 style="border:2px solid Violet;">Hello World</h1>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="border:2px solid Tomato;"&gt;</span>Hello World<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="border:2px solid DodgerBlue;"&gt;</span>Hello World<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="border:2px solid Violet;"&gt;</span>Hello World<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span>
+                    </code>
+                </div>
+            </div>
+            <h3>CSS Color Values</h3>
+            <p>In CSS, colors can also be specified using RGB values, HEX values, HSL values, RGBA values, and HSLA values:</p>
+            <p>Same as color name "Tomato":</p>
+            <div class="tomatoOpaque">
+                <div>rgb(255, 99, 71)</div>
+                <div>#ff6347</div>
+                <div>hsl(9, 100%, 64%)</div>
+            </div>
+            <p>Same as color name "Tomato", but 50% transparent:</p>
+            <div class="tomato50">
+                <div>rgba(255, 99, 71, 0.5)</div>
+                <div>hsla(9, 100%, 64%, 0.5)</div>
+            </div>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="background-color:rgb(255, 99, 71);"&gt;</span>...<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="background-color:#ff6347;"&gt;</span>...<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="background-color:hsl(9, 100%, 64%);"&gt;</span>...<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <br>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="background-color:rgba(255, 99, 71, 0.5);"&gt;</span>...<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span><br>
+                        <span class="value">&lt;</span><span class="selector">h1</span> <span class="property">style</span><span class="value">="background-color:hsla(9, 100%, 64%, 0.5);"&gt;</span>...<span class="value">&lt;</span><span class="selector">/h1</span><span class="value">&gt;</span>
+                    </code>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="Backgrounds">
+            <h2>Backgrounds</h2>
+            <p>The CSS background properties are used to define the background effects for elements.</p>
+            <p>In these chapters, you will learn about the following CSS background properties:</p>
+            <ul>
+                <li>background-color</li>
+                <li>background-image</li>
+                <li>background-repeat</li>
+                <li>background-attachment</li>
+                <li>background-position</li>
+            </ul>
+            <h3>CSS background-color</h3>
+            <p>The <span class="burgandy">background-color</span> property specifies the background color of an element.</p>
+            <div class="example">
+                <h3>Example</h3>                
+                <div class="theExample">
+                    <code>
+                        <span class="selector">body</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">lightblue</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>With CSS, a color is most often specified by:</p>
+            <ul>
+                <li>a valid color name - like "red"</li>
+                <li>a HEX value - like "#ff0000"</li>
+                <li>an RGB value - like "rgb(255,0,0)"</li>            
+            </ul>
+            <p>Look at <a href="https://www.w3schools.com/cssref/css_colors_legal.asp">CSS Color Values</a> for a complete list of possible color values.</p>
+            <hr>
+            <h3>Other Elements</h3>
+            <p>You can set the background color for any HTML elements:</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Here, the &lt;h1&gt;, &lt;p&gt;, and &lt;div&gt; elements will have different background colors: </p>     
+                <div class="theExample">
+                    <code>
+                        <span class="selector">h1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">green</span>;<br>
+                        }<br>
+                        <br>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">lightblue</span>;<br>
+                        }<br>
+                        <br>
+                        <span class="selector">p</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">yellow</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>Opacity / Transparency</h3>
+            <p>The <span class="burgandy">opacity</span> property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. The lower value, the more transparent:</p>
+            <table class="opacity">
+                <tr>
+                    <td>opacity 1</td>
+                    <td style="opacity: 0.6;">opacity 0.6</td>
+                    <td style="opacity: 0.3;">opacity 0.3</td>
+                    <td style='opacity: 0.1;'>opacity 0.1</td>
+                </tr>
+            </table>
+            <div class="example">
+                <h3>Example</h3>   
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background-color</span>: <span class="value">green</span>;<br>
+                        <span class="property">&nbsp;&nbsp;opacity</span>: <span class="value">0.3</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>Transparency using RGBA</h3>
+            <p>If you do not want to apply opacity to child elements, like in our example above, use <strong>RGBA</strong> color values. The following example sets the opacity for the background color and not the text:</p>
+            <table class="opacity">
+                <tr>
+                    <td>100% opacity</td>
+                    <td style="opacity: 0.6;">60% opacity</td>
+                    <td style="opacity: 0.3;">30% opacity</td>
+                    <td style='opacity: 0.1;'>10% opacity</td>
+                </tr>
+            </table>
+            <p>You learned from our CSS Colors Chapter, that you can use RGB as a color value. In addition to RGB, you can use an RGB color value with an <strong>alpha</strong> channel (RGB<strong>A</strong>) - which specifies the opacity for a color.</p>
+            <p>An RGBA color value is specified with: rgba(red, green, blue, <em>alpha</em>). The <em>alpha</em> parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).</p>
+            <div class="example">
+                <h3>Example</h3>   
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;background</span>: <span class="value">rgba(0, 128, 0, 0.3)</span>;
+                        <span class="comment">/*Green background. 30% opacity*/</span><br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="Borders">
+            <h2>Borders</h2>
+            <h3>CSS Border Properties</h3>
+            <p>The CSS <span class="burgandy">border</span> properties allow you to specify the style, width, and color of an element's border.</p>
+            <div class="borders" style="border:1px solid black;">I have borders on all sides.</div>
+            <div class="borders" style="border-bottom: 1px solid red;">I have a red bottom border.</div>
+            <div class="borders" style="border: 1px solid gray; border-radius: 25px;">I have rounded borders.</div>
+            <div class="borders" style="border-left: 3px solid blue; background: lightblue;">I have a blue left border.</div>
+            <hr>
+            <h3>CSS Border Style</h3>
+            <p>The <span class="burgandy">border-style</span> property specifies what kind of border to display.</p>
+            <p>The following values are allowed:</p>
+            <ul>
+                <li><span class="burgandy">dotted</span> - Defines a dotted border</li>
+                <li><span class="burgandy">dashed</span> - Defines a dashed border</li>
+                <li><span class="burgandy">solid</span> - Defines a solid border</li>
+                <li><span class="burgandy">double</span> - Defines a double border</li>
+                <li><span class="burgandy">groove</span> - Defines a 3D grooved border. The effect depends on the border-color value</li>
+                <li><span class="burgandy">ridge</span> - Defines a 3D ridged border. The effect depends on the border-color value</li>
+                <li><span class="burgandy">inset</span> - Defines a 3D inset border. The effect depends on the border-color value</li>
+                <li><span class="burgandy">outset</span> - Defines a 3D outset border. The effect depends on the border-color value</li>
+                <li><span class="burgandy">none</span> - Defines no border</li>
+                <li><span class="burgandy">hidden</span> - Defines a hidden border</li>
+            </ul>
+            <p>The <span class="burgandy">border-style</span> property can have from one to four values (for the top border, right border, bottom border, and the left border).</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Demonstration of the different border styles:</p>  
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p.dotted</span> {<span class="property">border-style</span>: <span class="value">dotted</span>;}<br>
+                        <span class="selector">p.dashed</span> {<span class="property">border-style</span>: <span class="value">dashed</span>;}<br>
+                        <span class="selector">p.solid</span> {<span class="property">border-style</span>: <span class="value">solid</span>;}<br>
+                        <span class="selector">p.double</span> {<span class="property">border-style</span>: <span class="value">double</span>;}<br>
+                        <span class="selector">p.groove</span> {<span class="property">border-style</span>: <span class="value">groove</span>;}<br>
+                        <span class="selector">p.ridge</span> {<span class="property">border-style</span>: <span class="value">ridge</span>;}<br>
+                        <span class="selector">p.inset</span> {<span class="property">border-style</span>: <span class="value">inset</span>;}<br>
+                        <span class="selector">p.outset</span> {<span class="property">border-style</span>: <span class="value">outset</span>;}<br>
+                        <span class="selector">p.none</span> {<span class="property">border-style</span>: <span class="value">none</span>;}<br>
+                        <span class="selector">p.hidden</span> {<span class="property">border-style</span>: <span class="value">hidden</span>;}<br>
+                        <span class="selector">p.mix</span> {<span class="property">border-style</span>: <span class="value">dotted dashed solid double</span>;}<br>
+                    </code>
+                </div>
+                <p>Result:</p>
+                <div class="theExample">
+                    <p style="border-style: dotted;">A dotted border</p>
+                    <p style="border-style: dashed;">A dashed border</p>
+                    <p style="border-style: solid;">A solid border</p>
+                    <p style="border-style: double;">A double border</p>
+                    <p style="border-style: groove;">A groove border. The effect depends on the border-color value.</p>
+                    <p style="border-style: ridge;">A ridge border. The effect depends on the border-color value.</p>
+                    <p style="border-style: inset;">An inset border. The effect depends on the border-color value.</p>
+                    <p style="border-style: outset;">An outset border. The effect depends on the border-color value.</p>
+                    <p>No border.</p>
+                    <p>A hidden border.</p>
+                    <p style="border-style: dotted dashed solid double;">A mixed border.</p>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="Margins">
+            <h2>Margins</h2>
+            <p>The CSS <span class="burgandy">margin</span> properties are used to create space around elements, outside of any defined borders.</p>
+            <p>With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left).</p>
+            <hr>
+            <h3>Margin - Individual Sides</h3>
+            <p>CSS has properties for specifying the margin for each side of an element:</p>
+            <ul class="burgandy">
+                <li>margin-top</li>
+                <li>margin-right</li>
+                <li>margin-bottom</li>
+                <li>margin-left</li>
+            </ul>
+            <p>All the margin properties can have the following values:</p>
+            <ul>
+                <li>auto - the browser calculates the margin</li>
+                <li>length - specifies a margin in px, pt, cm, etc.</li>
+                <li>% - specifies a margin in % of the width of the containing element</li>
+                <li>inherit - specifies that the margin should be inherited from the parent element</li>
+            </ul>
+            <p><strong>Tip:</strong> Negative values are allowed.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Set different margins for all four sides of a &lt;p&gt; element:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                            <span class="property">&nbsp;&nbsp;margin-top</span>: <span class="value">100px</span>;<br>
+                            <span class="property">&nbsp;&nbsp;margin-bottom</span>: <span class="value">100px</span>;<br>
+                            <span class="property">&nbsp;&nbsp;margin-right</span>: <span class="value">150px</span>;<br>
+                            <span class="property">&nbsp;&nbsp;margin-left</span>: <span class="value">80px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>Margin - Shorthand Property</h3>
+            <p>To shorten the code, it is possible to specify all the margin properties in one property.</p>
+            <p>The <span class="burgandy">margin</span> property is a shorthand property for the following individual margin properties:</p>
+            <ul class="burgandy">
+                <li>margin-top</li>
+                <li>margin-right</li>
+                <li>margin-bottom</li>
+                <li>margin-left</li>
+            </ul>
+            <p>So, here is how it works:</p>
+            <p>If the <span class="burgandy">margin</span> property has four values:</p>
+            <ul>
+                <li id="marginShorthand"><strong>margin: 25px 50px 75px 100px;</strong></li>
+                <ul>
+                    <li>top margin is 25px</li>
+                    <li>right margin is 50px</li>
+                    <li>bottom margin is 75px</li>
+                    <li>left margin is 100px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the margin shorthand property with four values:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                            <span class="property">&nbsp;&nbsp;margin</span>: <span class="value">25px 50px 75px 100px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>If the <span class="burgandy">margin</span> property has three values:</p>
+            <ul>
+                <li id="marginShorthand"><strong>margin: 25px 50px 75px;</strong></li>
+                <ul>
+                    <li>top margin is 25px</li>
+                    <li>right and left margins are 50px</li>
+                    <li>bottom margin is 75px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the margin shorthand property with three values:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                            <span class="property">&nbsp;&nbsp;margin</span>: <span class="value">25px 50px 75px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>If the <span class="burgandy">margin</span> property has two values:</p>
+            <ul>
+                <li id="marginShorthand"><strong>margin: 25px 50px;</strong></li>
+                <ul>
+                    <li>top and bottom margins are 25px</li>
+                    <li>right and left margins are 50px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the margin shorthand property with two values:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                            <span class="property">&nbsp;&nbsp;margin</span>: <span class="value">25px 50px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>If the <span class="burgandy">margin</span> property has one value:</p>
+            <ul>
+                <li id="marginShorthand"><strong>margin: 25px;</strong></li>
+                <ul>
+                    <li>all four margins are 25px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the margin shorthand property with one value:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">p</span> {<br>
+                            <span class="property">&nbsp;&nbsp;margin</span>: <span class="value">25px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>The auto Value</h3>
+            <p>You can set the margin property to <span class="burgandy">auto</span> to horizontally center the element within its container.</p>
+            <p>The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use margin: auto:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;width</span>: <span class="value">300px</span>;<br>
+                        <span class="property">&nbsp;&nbsp;margin</span>: <span class="value">auto</span>;<br>
+                        <span class="property">&nbsp;&nbsp;border</span>: <span class="value">1px solid red</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>The inherit Value</h3>
+            <p>This example lets the left margin of the &lt;p class="ex1"&gt; element be inherited from the parent element (&lt;div&gt;):</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use of the inherit value:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;border</span>: <span class="value">1px solid red</span>;<br>
+                        <span class="property">&nbsp;&nbsp;margin-left</span>: <span class="value">100px</span>;<br>
+                        }<br>
+                        <br>
+                        <span class="selector">p.ex1</span> {<br>
+                        <span class="property">&nbsp;&nbsp;margin-left</span>: <span class="value">inherit</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="Padding">
+            <h2>Padding</h2>
+            <p>The CSS <span class="burgandy">padding</span> properties are used to generate space around an element's content, inside of any defined borders.</p>
+            <p>With CSS, you have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left).</p>
+            <hr>
+            <h3>Padding - Individual Sides</h3>
+            <p>CSS has properties for specifying the padding for each side of an element:</p>
+            <ul class="burgandy">
+                <li>padding-top</li>
+                <li>padding-right</li>
+                <li>padding-bottom</li>
+                <li>padding-left</li>
+            </ul>
+            <p>All the padding properties can have the following values:</p>
+            <ul>
+                <li>length - specifies a padding in px, pt, cm, etc.</li>
+                <li>% - specifies a padding in % of the width of the containing element</li>
+                <li>inherit - specifies that the padding should be inherited from the parent element</li>
+            </ul>
+            <p><strong>Note:</strong> Negative values are not allowed.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Set different padding for all four sides of a &lt;div&gt; element:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;padding-top</span>: <span class="value">50px</span>;<br>
+                        <span class="property">&nbsp;&nbsp;padding-right</span>: <span class="value">30px</span>;<br>
+                        <span class="property">&nbsp;&nbsp;padding-bottom</span>: <span class="value">50px</span>;<br>
+                        <span class="property">&nbsp;&nbsp;padding-left</span>: <span class="value">80px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>Padding - Shorthand Property</h3>
+            <p>To shorten the code, it is possible to specify all the padding properties in one property.</p>
+            <p>The <span class="burgandy">padding</span> property is a shorthand property for the following individual padding properties:</p>
+            <ul class="burgandy">
+                <li>padding-top</li>
+                <li>padding-right</li>
+                <li>padding-bottom</li>
+                <li>padding-left</li>
+            </ul>
+            <p>So, here is how it works:</p>
+            <p>If the <span class="burgandy">padding</span> property has four values:</p>
+            <ul>
+                <li id="marginShorthand"><strong>padding: 25px 50px 75px 100px;</strong></li>
+                <ul>
+                    <li>top padding is 25px</li>
+                    <li>right padding is 50px</li>
+                    <li>bottom padding is 75px</li>
+                    <li>left padding is 100px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the padding shorthand property with four values:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                            <span class="property">&nbsp;&nbsp;padding</span>: <span class="value">25px 50px 75px 100px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>If the <span class="burgandy">padding</span> property has three values:</p>
+            <ul>
+                <li id="marginShorthand"><strong>padding: 25px 50px 75px;</strong></li>
+                <ul>
+                    <li>top padding is 25px</li>
+                    <li>right and left paddings are 50px</li>
+                    <li>bottom padding is 75px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the padding shorthand property with three values:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                            <span class="property">&nbsp;&nbsp;padding</span>: <span class="value">25px 50px 75px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>If the <span class="burgandy">padding</span> property has two values:</p>
+            <ul>
+                <li id="marginShorthand"><strong>padding: 25px 50px;</strong></li>
+                <ul>
+                    <li>top and bottom paddings are 25px</li>
+                    <li>right and left paddings are 50px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the padding shorthand property with two values:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                            <span class="property">&nbsp;&nbsp;padding</span>: <span class="value">25px 50px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>If the <span class="burgandy">padding</span> property has one value:</p>
+            <ul>
+                <li id="marginShorthand"><strong>padding: 25px;</strong></li>
+                <ul>
+                    <li>all four paddings are 25px</li>
+                </ul>
+            </ul>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the padding shorthand property with one value:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                            <span class="property">&nbsp;&nbsp;padding</span>: <span class="value">25px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <h3>Padding and Element Width</h3>
+            <p>The CSS <span class="burgandy">width</span> property specifies the width of the element's content area. The content area is the portion inside the padding, border, and margin of an element (<a href="https://www.w3schools.com/css/css_boxmodel.asp">the box model</a>).</p>
+            <p>So, if an element has a specified width, the padding added to that element will be added to the total width of the element. This is often an undesirable result.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Here, the &lt;div&gt; element is given a width of 300px. However, the actual width of the &lt;div&gt; element will be 350px (300px + 25px of left padding + 25px of right padding):</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;width</span>: <span class="value">300px</span>;<br>
+                        <span class="property">&nbsp;&nbsp;padding</span>: <span class="value">25px</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <p>To keep the width at 300px, no matter the amount of padding, you can use the <span class="burgandy">box-sizing</span> property. This causes the element to maintain its width; if you increase the padding, the available content space will decrease.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Use the box-sizing property to keep the width at 300px, no matter the amount of padding:</p>
+                <div class="theExample">
+                    <code>
+                        <span class="selector">div</span> {<br>
+                        <span class="property">&nbsp;&nbsp;width</span>: <span class="value">300px</span>;<br>
+                        <span class="property">&nbsp;&nbsp;padding</span>: <span class="value">25px</span>;<br>
+                        <span class="property">&nbsp;&nbsp;box-sizing</span>: <span class="value">border-box</span>;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>Text and image content taken directly from w3schools.com</p>
+            <p>Code and styling by Brianna Anderson © 2020</p>
+        </footer>
+    </main>
+</body>
+</html>
